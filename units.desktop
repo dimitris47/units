@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Units
+#Name[el_GR]=
+Comment=A unit converter
+#Comment[el_GR]=
+Exec=units
+Icon=equals.png
+StartupNotify=true
+Terminal=false
+Categories=Utility;
+Keywords=Units;DP;QT;
+Name[en_US]=Units

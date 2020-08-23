@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/equals.png</file>
+        <file>icons/equals.ico</file>
+        <file>icons/fallback/actions/application-exit.png</file>
+        <file>icons/fallback/actions/edit-clear.png</file>
+        <file>icons/fallback/actions/edit-delete.png</file>
+        <file>icons/fallback/actions/help-about.png</file>
+        <file>icons/fallback/actions/system-help.png</file>
+        <file>icons/fallback/index.theme</file>
+        <file>icons/fallback/actions/length-48.png</file>
+        <file>icons/fallback/actions/temperature-48.png</file>
+        <file>icons/fallback/actions/weight-48.png</file>
+    </qresource>
+</RCC>

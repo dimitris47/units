@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DistanceWidget</class>
+ <widget class="QFrame" name="DistanceWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>153</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Frame</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="4" column="0" colspan="3">
+    <widget class="QLineEdit" name="kmline">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5" alignment="Qt::AlignHCenter">
+    <widget class="QLabel" name="inchlabel">
+     <property name="text">
+      <string>inches</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="5">
+    <widget class="QLineEdit" name="inchline">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" colspan="3">
+    <widget class="QLineEdit" name="ftline">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3" alignment="Qt::AlignHCenter">
+    <widget class="QLabel" name="ftlabel">
+     <property name="text">
+      <string>feet</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="3" alignment="Qt::AlignHCenter">
+    <widget class="QLabel" name="kmlabel">
+     <property name="text">
+      <string>kilometers</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3" colspan="3">
+    <widget class="QLineEdit" name="mileline">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3" colspan="3" alignment="Qt::AlignHCenter">
+    <widget class="QLabel" name="millabel">
+     <property name="text">
+      <string>miles</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2" alignment="Qt::AlignHCenter">
+    <widget class="QLabel" name="cmlabel">
+     <property name="text">
+      <string>centimeters</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="6" alignment="Qt::AlignHCenter">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>DISTANCE / LENGTH</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QLineEdit" name="cmline">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+  </layout>
+  <action name="actionClear">
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>cmline</tabstop>
+  <tabstop>ftline</tabstop>
+  <tabstop>inchline</tabstop>
+  <tabstop>kmline</tabstop>
+  <tabstop>mileline</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
