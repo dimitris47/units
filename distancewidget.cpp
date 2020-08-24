@@ -9,19 +9,19 @@ DistanceWidget::DistanceWidget(QWidget *parent) : QFrame(parent), ui(new Ui::Dis
     ui->setupUi(this);
 
     ui->cmline->setAlignment(Qt::AlignCenter);
-    ui->cmline->setValidator(new QDoubleValidator(0, 1000, 10, this));
+    ui->cmline->setValidator(new QDoubleValidator(0, 1000, 2, this));
     ui->ftline->setAlignment(Qt::AlignCenter);
     ui->ftline->setValidator(new QIntValidator(0, 1000, this));
     ui->inchline->setAlignment(Qt::AlignCenter);
-    ui->inchline->setValidator(new QDoubleValidator(0, 1000, 10, this));
+    ui->inchline->setValidator(new QDoubleValidator(0, 1000, 2, this));
     ui->mLine->setAlignment(Qt::AlignCenter);
-    ui->mLine->setValidator(new QDoubleValidator(0, 1000, 100, this));
+    ui->mLine->setValidator(new QDoubleValidator(0, 1000, 2, this));
     ui->ydLine->setAlignment(Qt::AlignCenter);
-    ui->ydLine->setValidator(new QDoubleValidator(0, 1000, 100, this));
+    ui->ydLine->setValidator(new QDoubleValidator(0, 1000, 2, this));
     ui->kmline->setAlignment(Qt::AlignCenter);
-    ui->kmline->setValidator(new QDoubleValidator(0, 1000, 1000, this));
+    ui->kmline->setValidator(new QDoubleValidator(0, 1000, 3, this));
     ui->mileline->setAlignment(Qt::AlignCenter);
-    ui->mileline->setValidator(new QDoubleValidator(0, 1000, 1000, this));
+    ui->mileline->setValidator(new QDoubleValidator(0, 1000, 3, this));
 
     connect(ui->actionClear, &QAction::triggered, this, &DistanceWidget::clear);
 }
