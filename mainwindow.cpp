@@ -20,8 +20,6 @@ MainWindow::MainWindow(QWidget *parent) :
     readSettings();
     ui->setupUi(this);
 
-    connect(ui->actionExit, &QAction::triggered, this, &MainWindow::close);
-
     stackedWidget = new QStackedWidget(this);
     stackedWidget->setObjectName(QString::fromUtf8("stacked"));
     stackedWidget->addWidget(distance);
@@ -46,16 +44,13 @@ MainWindow::MainWindow(QWidget *parent) :
     weightActions->addAction(ui->actionClear);
     weightActions->setEnabled(true);
 
+    connect(ui->actionExit,        &QAction::triggered, this, &MainWindow::close);
     connect(ui->actionDistance,    &QAction::triggered, this, &MainWindow::showDistanceWidget);
     connect(ui->actionTemperature, &QAction::triggered, this, &MainWindow::showTemperatureWidget);
     connect(ui->actionWeight,      &QAction::triggered, this, &MainWindow::showWeightWidget);
-
-    connect(stackedWidget, &QStackedWidget::currentChanged, [=](int page) {
-        distanceActions->setEnabled(page == 1); });
-
-    connect(ui->actionClear, &QAction::triggered, distance, &DistanceWidget::clear);
-    connect(ui->actionClear, &QAction::triggered, temperature, &TemperatureWidget::clear);
-    connect(ui->actionClear, &QAction::triggered, weight, &WeightWidget::clear);
+    connect(ui->actionClear,       &QAction::triggered, distance, &DistanceWidget::clear);
+    connect(ui->actionClear,       &QAction::triggered, temperature, &TemperatureWidget::clear);
+    connect(ui->actionClear,       &QAction::triggered, weight, &WeightWidget::clear);
 }
 
 MainWindow::~MainWindow() {
