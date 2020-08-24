@@ -44,13 +44,13 @@ MainWindow::MainWindow(QWidget *parent) :
     weightActions->addAction(ui->actionClear);
     weightActions->setEnabled(true);
 
-    connect(ui->actionExit,        &QAction::triggered, this, &MainWindow::close);
-    connect(ui->actionDistance,    &QAction::triggered, this, &MainWindow::showDistanceWidget);
-    connect(ui->actionTemperature, &QAction::triggered, this, &MainWindow::showTemperatureWidget);
-    connect(ui->actionWeight,      &QAction::triggered, this, &MainWindow::showWeightWidget);
-    connect(ui->actionClear,       &QAction::triggered, distance, &DistanceWidget::clear);
+    connect(ui->actionExit,        &QAction::triggered, this,        &MainWindow::close);
+    connect(ui->actionDistance,    &QAction::triggered, this,        &MainWindow::showDistanceWidget);
+    connect(ui->actionTemperature, &QAction::triggered, this,        &MainWindow::showTemperatureWidget);
+    connect(ui->actionWeight,      &QAction::triggered, this,        &MainWindow::showWeightWidget);
+    connect(ui->actionClear,       &QAction::triggered, distance,    &DistanceWidget::clear);
     connect(ui->actionClear,       &QAction::triggered, temperature, &TemperatureWidget::clear);
-    connect(ui->actionClear,       &QAction::triggered, weight, &WeightWidget::clear);
+    connect(ui->actionClear,       &QAction::triggered, weight,      &WeightWidget::clear);
 }
 
 MainWindow::~MainWindow() {
@@ -101,3 +101,4 @@ void MainWindow::closeEvent(QCloseEvent *event) {
         settings.setValue("geometry", saveGeometry());
     event->accept();
 }
+

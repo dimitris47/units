@@ -70,3 +70,4 @@ void DistanceWidget::clear() {
     ui->kmline->setText("");
     ui->mileline->setText("");
 }
+
