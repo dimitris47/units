@@ -41,7 +41,7 @@ win32 {
     QMAKE_TARGET_DESCRIPTION = A simple unit converter between metric and imperial systems
     QMAKE_TARGET_COPYRIGHT = \\251 2020 Dimitris Psathas
     QMAKE_TARGET_PRODUCT = Units
-    RC_ICONS = equals.ico
+    RC_ICONS = icons/equals.ico
     RC_LANG = 0x408
     RC_CODEPAGE = 1253
 }
