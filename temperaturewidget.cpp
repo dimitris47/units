@@ -5,10 +5,11 @@
 
 TemperatureWidget::TemperatureWidget(QWidget *parent) : QFrame(parent), ui(new Ui::TemperatureWidget) {
     ui->setupUi(this);
+
     ui->celcline->setAlignment(Qt::AlignCenter);
-    ui->celcline->setValidator(new QDoubleValidator(0, 1000, 1, this));
+    ui->celcline->setValidator(new QDoubleValidator(-237, 1000, 1, this));
     ui->fahrline->setAlignment(Qt::AlignCenter);
-    ui->fahrline->setValidator(new QDoubleValidator(0, 1000, 1, this));
+    ui->fahrline->setValidator(new QDoubleValidator(-394.6, 1000, 1, this));
 }
 
 TemperatureWidget::~TemperatureWidget() {

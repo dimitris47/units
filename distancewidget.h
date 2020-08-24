@@ -21,6 +21,8 @@ private slots:
     void on_cmline_textEdited();
     void on_ftline_textEdited();
     void on_inchline_textEdited();
+    void on_mLine_textEdited();
+    void on_ydLine_textEdited();
     void on_kmline_textEdited();
     void on_mileline_textEdited();
 
