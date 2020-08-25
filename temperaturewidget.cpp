@@ -16,12 +16,16 @@ TemperatureWidget::~TemperatureWidget() {
 
 void TemperatureWidget::on_celcline_textEdited() {
     float C = ui->celcline->text().toDouble();
-    if (ui->celcline->text().contains(",")) {
+    if (C < -237)
+        QMessageBox::critical(
+                        this,
+                        tr("Invalid Temperature"),
+                        ("Temperatures below -237ºC can't exist."));
+    if (ui->celcline->text().contains(","))
         QMessageBox::critical(
                         this,
                         tr("Wrong decimal"),
                         ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
-    }
     float F = (C)*9/5+32;
     QString FRes = QString::number(F, 'f', 1);
     ui->fahrline->setText(FRes);
@@ -29,12 +33,16 @@ void TemperatureWidget::on_celcline_textEdited() {
 
 void TemperatureWidget::on_fahrline_textEdited() {
     float F = ui->fahrline->text().toDouble();
-    if (ui->fahrline->text().contains(",")) {
+    if (F < -394.6)
+        QMessageBox::critical(
+                        this,
+                        tr("Invalid Temperature"),
+                        ("Temperatures below -394.6ºF can't exist."));
+    if (ui->fahrline->text().contains(","))
         QMessageBox::critical(
                         this,
                         tr("Wrong decimal"),
                         ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
-    }
     float C = (F-32)*5/9;
     QString CRes = QString::number(C, 'f', 1);
     ui->celcline->setText(CRes);
