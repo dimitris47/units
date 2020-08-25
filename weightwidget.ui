@@ -30,6 +30,9 @@
      <property name="text">
       <string/>
      </property>
+     <property name="maxLength">
+      <number>9</number>
+     </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
@@ -76,6 +79,9 @@
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="maxLength">
+      <number>9</number>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
