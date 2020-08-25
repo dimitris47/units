@@ -61,16 +61,14 @@ void DistanceWidget::on_ftline_textEdited() {
 }
 
 void DistanceWidget::on_inchline_textEdited() {
-    int finalInches;
-    int newFeet;
     int feet = ui->ftline->text().toInt();
     float inches = ui->inchline->text().toDouble();
     if (inches >= 12) {
         int newInches = qRound(ui->inchline->text().toDouble());
-        finalInches = newInches % 12;
+        int finalInches = newInches % 12;
         ui->inchline->setText(QString::number(finalInches));
         int remInches = inches-finalInches;
-        newFeet = feet+remInches/12;
+        int newFeet = feet+remInches/12;
         ui->ftline->setText(QString::number(newFeet));
         float cm = newFeet*30.48+finalInches*2.54;
         QString cmRes = QString::number(cm, 'f', 2);
