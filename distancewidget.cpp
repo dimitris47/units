@@ -63,9 +63,25 @@ void DistanceWidget::on_ftline_textEdited() {
 void DistanceWidget::on_inchline_textEdited() {
     int feet = ui->ftline->text().toInt();
     float inches = ui->inchline->text().toDouble();
+    float cm = feet*30.48+inches*2.54;
+    QString cmRes = QString::number(cm, 'f', 2);
+    ui->cmline->setText(cmRes);
+
+    if (ui->inchline->text().contains(",")) {
+        QMessageBox::critical(
+                        this,
+                        tr("Wrong decimal"),
+                        ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
+    }
+}
+
+void DistanceWidget::on_inchline_editingFinished() {
+    int feet = ui->ftline->text().toInt();
+    float inches = ui->inchline->text().toDouble();
     if (inches >= 12) {
         int newInches = qRound(ui->inchline->text().toDouble());
-        int finalInches = newInches % 12;
+        float intermInches = newInches % 12;
+        float finalInches = intermInches + inches - newInches;
         ui->inchline->setText(QString::number(finalInches));
         int remInches = inches-finalInches;
         int newFeet = feet+remInches/12;
@@ -73,12 +89,6 @@ void DistanceWidget::on_inchline_textEdited() {
         float cm = newFeet*30.48+finalInches*2.54;
         QString cmRes = QString::number(cm, 'f', 2);
         ui->cmline->setText(cmRes);
-    }
-    if (inches < 12) {
-        float cm = feet*30.48+inches*2.54;
-        QString cmRes = QString::number(cm, 'f', 2);
-        ui->cmline->setText(cmRes);
-
     }
     if (ui->inchline->text().contains(",")) {
         QMessageBox::critical(
