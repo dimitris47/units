@@ -18,7 +18,7 @@ TemperatureWidget::~TemperatureWidget() {
 }
 
 void TemperatureWidget::on_celcline_textEdited() {
-    float C = ui->celcline->text().toFloat();
+    float C = ui->celcline->text().toDouble();
     if (ui->celcline->text().contains(",")) {
         QMessageBox::critical(
                         this,
@@ -31,7 +31,7 @@ void TemperatureWidget::on_celcline_textEdited() {
 }
 
 void TemperatureWidget::on_fahrline_textEdited() {
-    float F = ui->fahrline->text().toFloat();
+    float F = ui->fahrline->text().toDouble();
     if (ui->fahrline->text().contains(",")) {
         QMessageBox::critical(
                         this,

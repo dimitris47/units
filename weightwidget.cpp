@@ -19,7 +19,7 @@ WeightWidget::~WeightWidget() {
 
 void WeightWidget::on_kgline_textEdited()
 {
-    float kg = ui->kgline->text().toFloat();
+    float kg = ui->kgline->text().toDouble();
     if (ui->kgline->text().contains(",")) {
         QMessageBox::critical(
                         this,
@@ -27,12 +27,12 @@ void WeightWidget::on_kgline_textEdited()
                         ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
     }
     float pounds = kg*2.204623;
-    QString poundsRes = QString::number(pounds, 'f', 2);
+    QString poundsRes = QString::number(pounds, 'f', 3);
     ui->lbsline->setText(poundsRes);
 }
 
 void WeightWidget::on_lbsline_textEdited() {
-    float pounds = ui->lbsline->text().toFloat();
+    float pounds = ui->lbsline->text().toDouble();
     if (ui->lbsline->text().contains(",")) {
         QMessageBox::critical(
                         this,
@@ -40,7 +40,7 @@ void WeightWidget::on_lbsline_textEdited() {
                         ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
     }
     float kg = pounds/2.204623;
-    QString kgRes = QString::number(kg, 'f', 2);
+    QString kgRes = QString::number(kg, 'f', 3);
     ui->kgline->setText(kgRes);
 }
 
