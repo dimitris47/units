@@ -6,11 +6,8 @@
 
 WeightWidget::WeightWidget(QWidget *parent) : QFrame(parent), ui(new Ui::WeightWidget) {
     ui->setupUi(this);
-
-    ui->kgline->setAlignment(Qt::AlignCenter);
-    ui->kgline->setValidator(new QDoubleValidator(0.0, 999.0, 3, this));
-    ui->lbsline->setAlignment(Qt::AlignCenter);
-    ui->lbsline->setValidator(new QDoubleValidator(0.0, 999.0, 3, this));
+    ui->kgline->setValidator(new QDoubleValidator(0.0, 99999.999, 3, this));
+    ui->lbsline->setValidator(new QDoubleValidator(0.0, 99999.999, 3, this));
 }
 
 WeightWidget::~WeightWidget() {

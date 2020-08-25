@@ -1,28 +1,18 @@
 #include "distancewidget.h"
 #include "ui_distancewidget.h"
-#include <QDoubleValidator>
-#include <QIntValidator>
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QValidator>
 
 DistanceWidget::DistanceWidget(QWidget *parent) : QFrame(parent), ui(new Ui::DistanceWidget) {
     ui->setupUi(this);
-
-    ui->cmline->setAlignment(Qt::AlignCenter);
     ui->cmline->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));
-    ui->ftline->setAlignment(Qt::AlignCenter);
-    ui->ftline->setValidator(new QIntValidator(0.0, 999.0, this));
-    ui->inchline->setAlignment(Qt::AlignCenter);
+    ui->ftline->setValidator(new QIntValidator(0, 999, this));
     ui->inchline->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));
-    ui->mLine->setAlignment(Qt::AlignCenter);
     ui->mLine->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));
-    ui->ydLine->setAlignment(Qt::AlignCenter);
     ui->ydLine->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));
-    ui->kmline->setAlignment(Qt::AlignCenter);
     ui->kmline->setValidator(new QDoubleValidator(0.0, 999.0, 3, this));
-    ui->mileline->setAlignment(Qt::AlignCenter);
     ui->mileline->setValidator(new QDoubleValidator(0.0, 999.0, 3, this));
-
     connect(ui->actionClear, &QAction::triggered, this, &DistanceWidget::clear);
 }
 
