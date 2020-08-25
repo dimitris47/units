@@ -12,9 +12,9 @@ a. Compile from source:
 1. Extract archive
 2. Open extracted directory with Terminal
 3. Run the following:
-   $ mkdir ../build && cd ../build && qmake directory_of_extracted_archive/units-1.1/Units.CPP CONFIG+=release && make && sudo make install && rm -r ../build
+   $ qmake Units.CPP CONFIG+=release && make && sudo make install && make clean
    
-You might need to install base Qt packages to your Linux system before compiling.
+You might need to install libqt5gui5, g++ and make packages to your Linux system before compiling.
 
 
 b. Debian systems:
