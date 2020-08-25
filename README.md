@@ -20,5 +20,5 @@ You might need to install libqt5gui5, g++ and make packages to your Linux system
 b. Debian systems:
 
 Navigate to downloads directory and run:
-$ sudo dpkg -i units-1.1.deb.
+$ sudo dpkg -i units-1.2.deb.
 You might need to install the libqt5gui5 package before running the .deb file.
