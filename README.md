@@ -21,5 +21,5 @@ b. Debian systems:
 
 Navigate to downloads directory and run:
 <code>sudo dpkg -i units-1.2.deb</code>.
-You might need to install the libqt5gui5 package before running the .deb file.
+You might need to install the <code>libqt5gui5</code> package before running the .deb file.
 
