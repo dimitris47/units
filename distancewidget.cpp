@@ -20,8 +20,8 @@ DistanceWidget::~DistanceWidget() {
     delete ui;
 }
 
-void DistanceWidget::on_cmline_textEdited() {
-    float cm = ui->cmline->text().toDouble();
+void DistanceWidget::on_cmline_textEdited(const QString& value) {
+    float cm = value.toDouble();
     if (ui->cmline->text().contains(","))
         QMessageBox::critical(
                         this,
@@ -35,8 +35,8 @@ void DistanceWidget::on_cmline_textEdited() {
     ui->inchline->setText(inchRes);
 }
 
-void DistanceWidget::on_ftline_textEdited() {
-    int feet = ui->ftline->text().toInt();
+void DistanceWidget::on_ftline_textEdited(const QString& value) {
+    int feet = value.toInt();
     float inches = ui->inchline->text().toDouble();
     if (ui->inchline->text().contains(","))
         QMessageBox::critical(
@@ -48,9 +48,9 @@ void DistanceWidget::on_ftline_textEdited() {
     ui->cmline->setText(cmRes);
 }
 
-void DistanceWidget::on_inchline_textEdited() {
+void DistanceWidget::on_inchline_textEdited(const QString& value) {
     int feet = ui->ftline->text().toInt();
-    float inches = ui->inchline->text().toDouble();
+    float inches = value.toDouble();
     float cm = feet*30.48+inches*2.54;
     QString cmRes = QString::number(cm, 'f', 2);
     ui->cmline->setText(cmRes);
@@ -84,8 +84,8 @@ void DistanceWidget::on_inchline_editingFinished() {
                         ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
 }
 
-void DistanceWidget::on_mLine_textEdited() {
-    float meters = ui->mLine->text().toDouble();
+void DistanceWidget::on_mLine_textEdited(const QString& value) {
+    float meters = value.toDouble();
     if (ui->mLine->text().contains(","))
         QMessageBox::critical(
                         this,
@@ -96,8 +96,8 @@ void DistanceWidget::on_mLine_textEdited() {
     ui->ydLine->setText(ydRes);
 }
 
-void DistanceWidget::on_ydLine_textEdited() {
-    float yards = ui->ydLine->text().toDouble();
+void DistanceWidget::on_ydLine_textEdited(const QString& value) {
+    float yards = value.toDouble();
     if (ui->ydLine->text().contains(","))
         QMessageBox::critical(
                         this,
@@ -108,8 +108,8 @@ void DistanceWidget::on_ydLine_textEdited() {
     ui->mLine->setText(mRes);
 }
 
-void DistanceWidget::on_kmline_textEdited() {
-    float km = ui->kmline->text().toDouble();
+void DistanceWidget::on_kmline_textEdited(const QString &value) {
+    float km = value.toDouble();
     if (ui->kmline->text().contains(","))
         QMessageBox::critical(
                         this,
@@ -120,8 +120,8 @@ void DistanceWidget::on_kmline_textEdited() {
     ui->mileline->setText(mileRes);
 }
 
-void DistanceWidget::on_mileline_textEdited() {
-    float miles = ui->mileline->text().toDouble();
+void DistanceWidget::on_mileline_textEdited(const QString& value) {
+    float miles = value.toDouble();
     if (ui->mileline->text().contains(","))
         QMessageBox::critical(
                         this,
