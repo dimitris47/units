@@ -6,8 +6,8 @@
 
 TemperatureWidget::TemperatureWidget(QWidget *parent) : QFrame(parent), ui(new Ui::TemperatureWidget) {
     ui->setupUi(this);
-    ui->celcline->setValidator(new QDoubleValidator(-237.0, 999.9, 1, this));
-    ui->fahrline->setValidator(new QDoubleValidator(-394.6, 999.9, 1, this));
+    ui->celcline->setValidator(new QDoubleValidator(-273.15, 999.9, 1, this));
+    ui->fahrline->setValidator(new QDoubleValidator(-459.67, 999.9, 1, this));
 }
 
 TemperatureWidget::~TemperatureWidget() {
@@ -16,11 +16,11 @@ TemperatureWidget::~TemperatureWidget() {
 
 void TemperatureWidget::on_celcline_textEdited() {
     float C = ui->celcline->text().toDouble();
-    if (C < -237)
+    if (C < -273.15)
         QMessageBox::critical(
                         this,
                         tr("Invalid Temperature"),
-                        ("Temperatures below -237ºC can't exist."));
+                        ("Temperatures below -273.15ºC can't exist."));
     if (ui->celcline->text().contains(","))
         QMessageBox::critical(
                         this,
@@ -33,11 +33,11 @@ void TemperatureWidget::on_celcline_textEdited() {
 
 void TemperatureWidget::on_fahrline_textEdited() {
     float F = ui->fahrline->text().toDouble();
-    if (F < -394.6)
+    if (F < -459.67)
         QMessageBox::critical(
                         this,
                         tr("Invalid Temperature"),
-                        ("Temperatures below -394.6ºF can't exist."));
+                        ("Temperatures below -459.67ºF can't exist."));
     if (ui->fahrline->text().contains(","))
         QMessageBox::critical(
                         this,
