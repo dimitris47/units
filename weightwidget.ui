@@ -24,7 +24,8 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -42,7 +43,8 @@
     <widget class="QLabel" name="kglabel">
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -54,7 +56,8 @@
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -74,7 +77,8 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -99,7 +103,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>130</height>
+       <height>128</height>
       </size>
      </property>
     </spacer>
@@ -108,7 +112,8 @@
     <widget class="QLabel" name="lbslabel">
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">

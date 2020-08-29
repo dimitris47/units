@@ -24,7 +24,8 @@
     <widget class="QLabel" name="cmlabel">
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -42,7 +43,8 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="maxLength">
@@ -63,7 +65,8 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -81,7 +84,8 @@
     <widget class="QLabel" name="kmlabel">
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -93,7 +97,8 @@
     <widget class="QLabel" name="ydlabel">
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -111,7 +116,8 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -135,7 +141,8 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -153,7 +160,8 @@
     <widget class="QLabel" name="mlabel">
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -165,7 +173,8 @@
     <widget class="QLabel" name="ftlabel">
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -183,7 +192,8 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="maxLength">
@@ -204,7 +214,8 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -222,7 +233,8 @@
     <widget class="QLabel" name="millabel">
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -240,7 +252,8 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -258,7 +271,8 @@
     <widget class="QLabel" name="inchlabel">
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -270,7 +284,8 @@
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Fira Sans</family>
+       <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
