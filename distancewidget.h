@@ -18,14 +18,14 @@ public slots:
     void clear();
 
 private slots:
-    void on_cmline_textEdited();
-    void on_ftline_textEdited();
+    void on_cmline_textEdited(const QString &value);
+    void on_ftline_textEdited(const QString &value);
     void on_inchline_editingFinished();
-    void on_inchline_textEdited();
-    void on_mLine_textEdited();
-    void on_ydLine_textEdited();
-    void on_kmline_textEdited();
-    void on_mileline_textEdited();
+    void on_inchline_textEdited(const QString &value);
+    void on_mLine_textEdited(const QString &value);
+    void on_ydLine_textEdited(const QString &value);
+    void on_kmline_textEdited(const QString &value);
+    void on_mileline_textEdited(const QString &value);
 
 private:
     Ui::DistanceWidget *ui;
