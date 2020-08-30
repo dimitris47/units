@@ -6,7 +6,6 @@
 
 TemperatureWidget::TemperatureWidget(QWidget *parent) : QFrame(parent), ui(new Ui::TemperatureWidget) {
     ui->setupUi(this);
-    QLocale::setDefault(QLocale::C);
     ui->celcline->setValidator(new QDoubleValidator(-273.15, 999.9, 2, this));
     ui->fahrline->setValidator(new QDoubleValidator(-459.67, 999.9, 2, this));
 }
