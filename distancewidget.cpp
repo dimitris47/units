@@ -1,11 +1,11 @@
 #include "distancewidget.h"
 #include "ui_distancewidget.h"
 #include <QMainWindow>
-#include <QMessageBox>
 #include <QValidator>
 
 DistanceWidget::DistanceWidget(QWidget *parent) : QFrame(parent), ui(new Ui::DistanceWidget) {
     ui->setupUi(this);
+    QLocale::setDefault(QLocale::C);
     ui->cmline->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));
     ui->ftline->setValidator(new QIntValidator(0, 999, this));
     ui->inchline->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));
@@ -22,11 +22,6 @@ DistanceWidget::~DistanceWidget() {
 
 void DistanceWidget::on_cmline_textEdited(const QString& value) {
     float cm = value.toDouble();
-    if (ui->cmline->text().contains(","))
-        QMessageBox::critical(
-                        this,
-                        tr("Wrong decimal"),
-                        ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
     int feet = cm/30.48;
     float inches = (cm-feet*30.48)/2.54;
     QString ftRes = QString::number(feet);
@@ -38,28 +33,17 @@ void DistanceWidget::on_cmline_textEdited(const QString& value) {
 void DistanceWidget::on_ftline_textEdited(const QString& value) {
     int feet = value.toInt();
     float inches = ui->inchline->text().toDouble();
-    if (ui->inchline->text().contains(","))
-        QMessageBox::critical(
-                        this,
-                        tr("Wrong decimal"),
-                        ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
     float cm = feet*30.48+inches*2.54;
     QString cmRes = QString::number(cm, 'f', 2);
     ui->cmline->setText(cmRes);
 }
 
 void DistanceWidget::on_inchline_textEdited(const QString& value) {
-    int feet = ui->ftline->text().toInt();
     float inches = value.toDouble();
+    int feet = ui->ftline->text().toInt();
     float cm = feet*30.48+inches*2.54;
     QString cmRes = QString::number(cm, 'f', 2);
     ui->cmline->setText(cmRes);
-
-    if (ui->inchline->text().contains(","))
-        QMessageBox::critical(
-                        this,
-                        tr("Wrong decimal"),
-                        ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
 }
 
 void DistanceWidget::on_inchline_editingFinished() {
@@ -77,20 +61,10 @@ void DistanceWidget::on_inchline_editingFinished() {
         QString cmRes = QString::number(cm, 'f', 2);
         ui->cmline->setText(cmRes);
     }
-    if (ui->inchline->text().contains(","))
-        QMessageBox::critical(
-                        this,
-                        tr("Wrong decimal"),
-                        ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
 }
 
 void DistanceWidget::on_mLine_textEdited(const QString& value) {
     float meters = value.toDouble();
-    if (ui->mLine->text().contains(","))
-        QMessageBox::critical(
-                        this,
-                        tr("Wrong decimal"),
-                        ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
     float yards = meters*0.9144;
     QString ydRes = QString::number(yards, 'f', 3);
     ui->ydLine->setText(ydRes);
@@ -98,11 +72,6 @@ void DistanceWidget::on_mLine_textEdited(const QString& value) {
 
 void DistanceWidget::on_ydLine_textEdited(const QString& value) {
     float yards = value.toDouble();
-    if (ui->ydLine->text().contains(","))
-        QMessageBox::critical(
-                        this,
-                        tr("Wrong decimal"),
-                        ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
     float meters = yards/0.9144;
     QString mRes = QString::number(meters, 'f', 3);
     ui->mLine->setText(mRes);
@@ -110,11 +79,6 @@ void DistanceWidget::on_ydLine_textEdited(const QString& value) {
 
 void DistanceWidget::on_kmline_textEdited(const QString &value) {
     float km = value.toDouble();
-    if (ui->kmline->text().contains(","))
-        QMessageBox::critical(
-                        this,
-                        tr("Wrong decimal"),
-                        ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
     float miles = km*0.6213712;
     QString mileRes = QString::number(miles, 'f', 3);
     ui->mileline->setText(mileRes);
@@ -122,11 +86,6 @@ void DistanceWidget::on_kmline_textEdited(const QString &value) {
 
 void DistanceWidget::on_mileline_textEdited(const QString& value) {
     float miles = value.toDouble();
-    if (ui->mileline->text().contains(","))
-        QMessageBox::critical(
-                        this,
-                        tr("Wrong decimal"),
-                        ("In order to correctly type a decimal number,<br/>you must use \".\" instead of \",\"."));
     float km = miles/0.6213712;
     QString kmRes = QString::number(km, 'f', 3);
     ui->kmline->setText(kmRes);
@@ -141,4 +100,3 @@ void DistanceWidget::clear() {
     ui->kmline->setText("");
     ui->mileline->setText("");
 }
-

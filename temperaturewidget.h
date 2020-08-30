@@ -18,8 +18,8 @@ public slots:
     void clear();
 
 private slots:
-    void on_celcline_textEdited();
-    void on_fahrline_textEdited();
+    void on_celcline_textEdited(const QString& value);
+    void on_fahrline_textEdited(const QString& value);
 
 private:
     Ui::TemperatureWidget *ui;
