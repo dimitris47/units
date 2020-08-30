@@ -5,7 +5,6 @@
 
 DistanceWidget::DistanceWidget(QWidget *parent) : QFrame(parent), ui(new Ui::DistanceWidget) {
     ui->setupUi(this);
-    QLocale::setDefault(QLocale::C);
     ui->cmline->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));
     ui->ftline->setValidator(new QIntValidator(0, 999, this));
     ui->inchline->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));

@@ -3,6 +3,7 @@
 #include <QApplication>
 
 int main(int argc, char *argv[]) {
+    QLocale::setDefault(QLocale::C);
     QApplication a(argc, argv);
     QApplication::setOrganizationName("DP Software");
     QApplication::setApplicationName(APPNAME);

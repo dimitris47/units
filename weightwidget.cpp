@@ -6,7 +6,6 @@
 
 WeightWidget::WeightWidget(QWidget *parent) : QFrame(parent), ui(new Ui::WeightWidget) {
     ui->setupUi(this);
-    QLocale::setDefault(QLocale::C);
     ui->kgline->setValidator(new QDoubleValidator(0.0, 99999.999, 3, this));
     ui->lbsline->setValidator(new QDoubleValidator(0.0, 99999.999, 3, this));
 }
