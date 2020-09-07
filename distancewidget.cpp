@@ -64,14 +64,14 @@ void DistanceWidget::on_inchline_editingFinished() {
 
 void DistanceWidget::on_mLine_textEdited(const QString& value) {
     float meters = value.toDouble();
-    float yards = meters*0.9144;
+    float yards = meters/0.9144;
     QString ydRes = QString::number(yards, 'f', 3);
     ui->ydLine->setText(ydRes);
 }
 
 void DistanceWidget::on_ydLine_textEdited(const QString& value) {
     float yards = value.toDouble();
-    float meters = yards/0.9144;
+    float meters = yards*0.9144;
     QString mRes = QString::number(meters, 'f', 3);
     ui->mLine->setText(mRes);
 }
