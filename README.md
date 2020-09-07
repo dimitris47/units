@@ -3,6 +3,7 @@
 WINDOWS SYSTEMS:
 
 Run the UnitsInstaller.exe file.
+If after the installation the program doesn't start, install vc_redist.exe from the installation folder.
 
 
 LINUX SYSTEMS:

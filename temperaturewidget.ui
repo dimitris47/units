@@ -24,8 +24,10 @@
      </property>
      <property name="font">
       <font>
-       <family>Fira Sans</family>
+       <family>Segoe UI</family>
        <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
@@ -46,8 +48,10 @@
     <widget class="QLabel" name="celclabel">
      <property name="font">
       <font>
-       <family>Fira Sans</family>
+       <family>Segoe UI</family>
        <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -75,7 +79,7 @@
     <widget class="QLabel" name="fahrlabel">
      <property name="font">
       <font>
-       <family>Fira Sans</family>
+       <family>Segoe UI</family>
        <pointsize>12</pointsize>
        <weight>50</weight>
        <bold>false</bold>
@@ -90,7 +94,7 @@
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
-       <family>Fira Sans</family>
+       <family>Segoe UI</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -111,8 +115,10 @@
      </property>
      <property name="font">
       <font>
-       <family>Fira Sans</family>
+       <family>Segoe UI</family>
        <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="toolTip">
