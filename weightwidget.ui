@@ -24,7 +24,6 @@
      </property>
      <property name="font">
       <font>
-       <family>Segoe UI</family>
        <pointsize>12</pointsize>
        <weight>50</weight>
        <bold>false</bold>
@@ -48,7 +47,6 @@
     <widget class="QLabel" name="kglabel">
      <property name="font">
       <font>
-       <family>Segoe UI</family>
        <pointsize>12</pointsize>
        <weight>50</weight>
        <bold>false</bold>
@@ -63,7 +61,6 @@
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
-       <family>Segoe UI</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -84,7 +81,6 @@
      </property>
      <property name="font">
       <font>
-       <family>Segoe UI</family>
        <pointsize>12</pointsize>
        <weight>50</weight>
        <bold>false</bold>
@@ -124,7 +120,6 @@
     <widget class="QLabel" name="lbslabel">
      <property name="font">
       <font>
-       <family>Segoe UI</family>
        <pointsize>12</pointsize>
        <weight>50</weight>
        <bold>false</bold>
