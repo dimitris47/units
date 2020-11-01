@@ -2,8 +2,8 @@
 
 WINDOWS SYSTEMS:
 
-Run the UnitsInstaller.exe file.
-If after the installation the program doesn't start, install vc_redist.exe from the installation folder.
+Run the <code>UnitsInstaller.exe</code> file.
+If after the installation the program doesn't start, install <code>vc_redist.exe</code> from the installation folder.
 
 
 LINUX SYSTEMS:
@@ -19,7 +19,7 @@ You might need to install <code>libqt5gui5</code>, <code>g++</code> and <code>ma
 
 b. Debian systems:
 
-1. Download units-1.4.deb file from releases.
+1. Download <code>units-1.4.deb</code> file from releases.
 2. Open downloads folder with Terminal and run:
 <code>sudo dpkg -i units-1.4.deb</code>
 
