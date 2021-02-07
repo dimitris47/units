@@ -6,6 +6,7 @@
 #include <QSettings>
 
 class DistanceWidget;
+class Speed;
 class TemperatureWidget;
 class WeightWidget;
 class QStackedWidget;
@@ -28,14 +29,16 @@ protected:
 private slots:
     void on_actionAbout_triggered();
     void showDistanceWidget();
+    void showSpeedWidget();
     void showTemperatureWidget();
     void showWeightWidget();
 
 private:
     Ui::MainWindow *ui;
-    DistanceWidget* distance;
-    TemperatureWidget* temperature;
-    WeightWidget* weight;
+    DistanceWidget *distance;
+    Speed *speed;
+    TemperatureWidget *temperature;
+    WeightWidget *weight;
     QStackedWidget *stackedWidget;
 };
 

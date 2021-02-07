@@ -10,23 +10,18 @@ WeightWidget::WeightWidget(QWidget *parent) : QFrame(parent), ui(new Ui::WeightW
     ui->lbsline->setValidator(new QDoubleValidator(0.0, 99999.999, 3, this));
 }
 
-WeightWidget::~WeightWidget() {
-    delete ui;
-}
+WeightWidget::~WeightWidget() { delete ui; }
 
-void WeightWidget::on_kgline_textEdited(const QString& value)
-{
-    float kg = value.toDouble();
-    float pounds = kg*2.204623;
-    QString poundsRes = QString::number(pounds, 'f', 3);
-    ui->lbsline->setText(poundsRes);
+void WeightWidget::on_kgline_textEdited(const QString& value) {
+    double kg = value.toDouble();
+    double pounds = kg * 2.204623;
+    ui->lbsline->setText(QString::number(pounds, 'f', 3));
 }
 
 void WeightWidget::on_lbsline_textEdited(const QString& value) {
-    float pounds = value.toDouble();
-    float kg = pounds/2.204623;
-    QString kgRes = QString::number(kg, 'f', 3);
-    ui->kgline->setText(kgRes);
+    double pounds = value.toDouble();
+    double kg = pounds / 2.204623;
+    ui->kgline->setText(QString::number(kg, 'f', 3));
 }
 
 void WeightWidget::clear() {

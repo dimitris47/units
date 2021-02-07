@@ -19,9 +19,9 @@ You might need to install <code>libqt5gui5</code>, <code>g++</code> and <code>ma
 
 b. Debian systems:
 
-1. Download <code>units-1.4.deb</code> file from releases.
+1. Download <code>units-2.0.deb</code> file from releases.
 2. Open downloads folder with Terminal and run:
-<code>sudo dpkg -i units-1.4.deb</code>
+<code>sudo dpkg -i units-2.0.deb</code>
 
 You might need to install the <code>libqt5gui5</code> package before running the .deb file.
 

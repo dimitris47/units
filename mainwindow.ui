@@ -44,6 +44,7 @@
    <addaction name="actionDistance"/>
    <addaction name="actionWeight"/>
    <addaction name="actionTemperature"/>
+   <addaction name="actionSpeed"/>
    <addaction name="separator"/>
    <addaction name="actionClear"/>
    <addaction name="actionAbout"/>
@@ -53,7 +54,7 @@
   <action name="actionClear">
    <property name="icon">
     <iconset resource="units.qrc">
-     <normaloff>:/icons/fallback/actions/edit-clear.png</normaloff>:/icons/fallback/actions/edit-clear.png</iconset>
+     <normaloff>:/icons/edit-clear.png</normaloff>:/icons/edit-clear.png</iconset>
    </property>
    <property name="text">
     <string>Clear Fields</string>
@@ -65,7 +66,7 @@
   <action name="actionExit">
    <property name="icon">
     <iconset resource="units.qrc">
-     <normaloff>:/icons/fallback/actions/application-exit.png</normaloff>:/icons/fallback/actions/application-exit.png</iconset>
+     <normaloff>:/icons/application-exit.png</normaloff>:/icons/application-exit.png</iconset>
    </property>
    <property name="text">
     <string>Exit</string>
@@ -80,7 +81,7 @@
   <action name="actionAbout">
    <property name="icon">
     <iconset resource="units.qrc">
-     <normaloff>:/icons/fallback/actions/help-about.png</normaloff>:/icons/fallback/actions/help-about.png</iconset>
+     <normaloff>:/icons/help-about.png</normaloff>:/icons/help-about.png</iconset>
    </property>
    <property name="text">
     <string>About</string>
@@ -89,7 +90,7 @@
   <action name="actionDistance">
    <property name="icon">
     <iconset resource="units.qrc">
-     <normaloff>:/icons/fallback/actions/length-48.png</normaloff>:/icons/fallback/actions/length-48.png</iconset>
+     <normaloff>:/icons/length-48.png</normaloff>:/icons/length-48.png</iconset>
    </property>
    <property name="text">
     <string>Distance</string>
@@ -101,7 +102,7 @@
   <action name="actionTemperature">
    <property name="icon">
     <iconset resource="units.qrc">
-     <normaloff>:/icons/fallback/actions/temperature-48.png</normaloff>:/icons/fallback/actions/temperature-48.png</iconset>
+     <normaloff>:/icons/temperature-48.png</normaloff>:/icons/temperature-48.png</iconset>
    </property>
    <property name="text">
     <string>Temperature</string>
@@ -113,13 +114,25 @@
   <action name="actionWeight">
    <property name="icon">
     <iconset resource="units.qrc">
-     <normaloff>:/icons/fallback/actions/weight-48.png</normaloff>:/icons/fallback/actions/weight-48.png</iconset>
+     <normaloff>:/icons/weight-48.png</normaloff>:/icons/weight-48.png</iconset>
    </property>
    <property name="text">
     <string>Weight</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="actionSpeed">
+   <property name="icon">
+    <iconset resource="units.qrc">
+     <normaloff>:/icons/speed-48.png</normaloff>:/icons/speed-48.png</iconset>
+   </property>
+   <property name="text">
+    <string>Speed</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+4</string>
    </property>
   </action>
  </widget>

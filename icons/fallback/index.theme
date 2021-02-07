@@ -1,8 +1,0 @@
-[Icon Theme]
-Name = Fallback Theme
-Comment = Fallback Theme for Recipe Calories Application
-
-[actions]
-Size=48
-Context=Actions
-Type=Fixed

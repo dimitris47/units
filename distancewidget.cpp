@@ -5,97 +5,77 @@
 
 DistanceWidget::DistanceWidget(QWidget *parent) : QFrame(parent), ui(new Ui::DistanceWidget) {
     ui->setupUi(this);
-    ui->cmline->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));
-    ui->ftline->setValidator(new QIntValidator(0, 999, this));
-    ui->inchline->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));
-    ui->mLine->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));
-    ui->ydLine->setValidator(new QDoubleValidator(0.0, 999.0, 2, this));
-    ui->kmline->setValidator(new QDoubleValidator(0.0, 999.0, 3, this));
-    ui->mileline->setValidator(new QDoubleValidator(0.0, 999.0, 3, this));
-    connect(ui->actionClear, &QAction::triggered, this, &DistanceWidget::clear);
+    auto lines = this->findChildren<QLineEdit *>();
+    for (auto &&line : lines)
+        line->setValidator(new QDoubleValidator(0.0, 99999.999, 3, this));
 }
 
-DistanceWidget::~DistanceWidget() {
-    delete ui;
-}
+DistanceWidget::~DistanceWidget() { delete ui; }
 
 void DistanceWidget::on_cmline_textEdited(const QString& value) {
-    float cm = value.toDouble();
-    int feet = cm/30.48;
-    float inches = (cm-feet*30.48)/2.54;
-    QString ftRes = QString::number(feet);
-    QString inchRes = QString::number(inches, 'f', 2);
-    ui->ftline->setText(ftRes);
-    ui->inchline->setText(inchRes);
+    double cm = value.toDouble();
+    int feet = cm / 30.48;
+    double inches = (cm - feet * 30.48) / 2.54;
+    ui->ftline->setText(QString::number(feet));
+    ui->inchline->setText(QString::number(inches, 'f', 2));
 }
 
 void DistanceWidget::on_ftline_textEdited(const QString& value) {
     int feet = value.toInt();
-    float inches = ui->inchline->text().toDouble();
-    float cm = feet*30.48+inches*2.54;
-    QString cmRes = QString::number(cm, 'f', 2);
-    ui->cmline->setText(cmRes);
+    double inches = ui->inchline->text().toDouble();
+    double cm = feet * 30.48 + inches * 2.54;
+    ui->cmline->setText(QString::number(cm, 'f', 2));
 }
 
 void DistanceWidget::on_inchline_textEdited(const QString& value) {
-    float inches = value.toDouble();
+    double inches = value.toDouble();
     int feet = ui->ftline->text().toInt();
-    float cm = feet*30.48+inches*2.54;
-    QString cmRes = QString::number(cm, 'f', 2);
-    ui->cmline->setText(cmRes);
+    double cm = feet * 30.48 + inches * 2.54;
+    ui->cmline->setText(QString::number(cm, 'f', 2));
 }
 
 void DistanceWidget::on_inchline_editingFinished() {
     int feet = ui->ftline->text().toInt();
-    float inches = ui->inchline->text().toDouble();
+    double inches = ui->inchline->text().toDouble();
     if (inches >= 12) {
         int newInches = qRound(ui->inchline->text().toDouble());
-        float intermInches = newInches % 12;
-        float finalInches = intermInches + inches - newInches;
+        double intermInches = newInches % 12;
+        double finalInches = intermInches + inches - newInches;
         ui->inchline->setText(QString::number(finalInches));
-        int remInches = inches-finalInches;
-        int newFeet = feet+remInches/12;
+        int remInches = inches - finalInches;
+        int newFeet = feet + remInches / 12;
         ui->ftline->setText(QString::number(newFeet));
-        float cm = newFeet*30.48+finalInches*2.54;
-        QString cmRes = QString::number(cm, 'f', 2);
-        ui->cmline->setText(cmRes);
+        double cm = newFeet * 30.48 + finalInches * 2.54;
+        ui->cmline->setText(QString::number(cm, 'f', 2));
     }
 }
 
 void DistanceWidget::on_mLine_textEdited(const QString& value) {
-    float meters = value.toDouble();
-    float yards = meters/0.9144;
-    QString ydRes = QString::number(yards, 'f', 3);
-    ui->ydLine->setText(ydRes);
+    double meters = value.toDouble();
+    double yards = meters / 0.9144;
+    ui->ydLine->setText(QString::number(yards, 'f', 3));
 }
 
 void DistanceWidget::on_ydLine_textEdited(const QString& value) {
-    float yards = value.toDouble();
-    float meters = yards*0.9144;
-    QString mRes = QString::number(meters, 'f', 3);
-    ui->mLine->setText(mRes);
+    double yards = value.toDouble();
+    double meters = yards * 0.9144;
+    ui->mLine->setText(QString::number(meters, 'f', 3));
 }
 
 void DistanceWidget::on_kmline_textEdited(const QString &value) {
-    float km = value.toDouble();
-    float miles = km*0.6213712;
-    QString mileRes = QString::number(miles, 'f', 3);
-    ui->mileline->setText(mileRes);
+    double km = value.toDouble();
+    double miles = km * 0.6213712;
+    ui->mileline->setText(QString::number(miles, 'f', 3));
 }
 
 void DistanceWidget::on_mileline_textEdited(const QString& value) {
-    float miles = value.toDouble();
-    float km = miles/0.6213712;
-    QString kmRes = QString::number(km, 'f', 3);
-    ui->kmline->setText(kmRes);
+    double miles = value.toDouble();
+    double km = miles / 0.6213712;
+    ui->kmline->setText(QString::number(km, 'f', 3));
 }
 
 void DistanceWidget::clear() {
-    ui->cmline->setText("");
-    ui->ftline->setText("");
-    ui->inchline->setText("");
-    ui->mLine->setText("");
-    ui->ydLine->setText("");
-    ui->kmline->setText("");
-    ui->mileline->setText("");
+    auto lines = this->findChildren<QLineEdit *>();
+    for (auto &&line : lines)
+        line->setText("");
 }

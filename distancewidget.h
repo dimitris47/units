@@ -3,9 +3,7 @@
 
 #include <QFrame>
 
-namespace Ui {
-class DistanceWidget;
-}
+namespace Ui { class DistanceWidget; }
 
 class DistanceWidget : public QFrame {
     Q_OBJECT

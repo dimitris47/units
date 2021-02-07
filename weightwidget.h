@@ -3,9 +3,7 @@
 
 #include <QFrame>
 
-namespace Ui {
-class WeightWidget;
-}
+namespace Ui { class WeightWidget; }
 
 class WeightWidget : public QFrame {
     Q_OBJECT

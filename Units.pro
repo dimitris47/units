@@ -4,12 +4,13 @@ TARGET = units
 CONFIG += c++11
 DEFINES += QT_DEPRECATED_WARNINGS
 TEMPLATE = app
-VERSION = 1.4
+VERSION = 2.0
 
 SOURCES += \
     distancewidget.cpp \
     main.cpp \
     mainwindow.cpp \
+    speed.cpp \
     temperaturewidget.cpp \
     weightwidget.cpp
 
@@ -17,12 +18,14 @@ HEADERS += \
     distancewidget.h \
     global.h \
     mainwindow.h \
+    speed.h \
     temperaturewidget.h \
     weightwidget.h
 
 FORMS += \
     distancewidget.ui \
     mainwindow.ui \
+    speed.ui \
     temperaturewidget.ui \
     weightwidget.ui
 
@@ -49,15 +52,6 @@ win32 {
 DISTFILES += \
     icons/equals.ico \
     icons/equals.png \
-    icons/fallback/actions/application-exit.png \
-    icons/fallback/actions/edit-clear.png \
-    icons/fallback/actions/edit-delete.png \
-    icons/fallback/actions/help-about.png \
-    icons/fallback/actions/length-48.png \
-    icons/fallback/actions/system-help.png \
-    icons/fallback/actions/temperature-48.png \
-    icons/fallback/actions/weight-48.png \
-    icons/fallback/index.theme \
     units.desktop
 
 RESOURCES += \

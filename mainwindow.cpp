@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "distancewidget.h"
+#include "speed.h"
 #include "temperaturewidget.h"
 #include "weightwidget.h"
 #include <QActionGroup>
@@ -11,30 +12,34 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     distance(new DistanceWidget),
+    speed(new Speed),
     temperature(new TemperatureWidget),
     weight(new WeightWidget)
 {
-    QIcon::setThemeSearchPaths(QStringList() << ":icons" << QIcon::themeSearchPaths());
-    QIcon::setThemeName("fallback");
-
     readSettings();
     ui->setupUi(this);
 
     stackedWidget = new QStackedWidget(this);
     stackedWidget->setObjectName(QString::fromUtf8("stacked"));
     stackedWidget->addWidget(distance);
+    stackedWidget->addWidget(speed);
     stackedWidget->addWidget(temperature);
     stackedWidget->addWidget(weight);
     setCentralWidget(stackedWidget);
 
     auto switchPages = new QActionGroup(this);
     switchPages->addAction(ui->actionDistance);
+    switchPages->addAction(ui->actionSpeed);
     switchPages->addAction(ui->actionTemperature);
     switchPages->addAction(ui->actionWeight);
 
     auto distanceActions = new QActionGroup(this);
     distanceActions->addAction(ui->actionClear);
     distanceActions->setEnabled(true);
+
+    auto speedActions = new QActionGroup(this);
+    speedActions->addAction(ui->actionClear);
+    speedActions->setEnabled(true);
 
     auto temperatureActions = new QActionGroup(this);
     temperatureActions->addAction(ui->actionClear);
@@ -46,9 +51,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->actionExit,        &QAction::triggered, this,        &MainWindow::close);
     connect(ui->actionDistance,    &QAction::triggered, this,        &MainWindow::showDistanceWidget);
+    connect(ui->actionSpeed,       &QAction::triggered, this,        &MainWindow::showSpeedWidget);
     connect(ui->actionTemperature, &QAction::triggered, this,        &MainWindow::showTemperatureWidget);
     connect(ui->actionWeight,      &QAction::triggered, this,        &MainWindow::showWeightWidget);
     connect(ui->actionClear,       &QAction::triggered, distance,    &DistanceWidget::clear);
+    connect(ui->actionClear,       &QAction::triggered, speed,       &Speed::clear);
     connect(ui->actionClear,       &QAction::triggered, temperature, &TemperatureWidget::clear);
     connect(ui->actionClear,       &QAction::triggered, weight,      &WeightWidget::clear);
 }
@@ -73,6 +80,10 @@ void MainWindow::readSettings() {
 
 void MainWindow::showDistanceWidget() {
     stackedWidget->setCurrentWidget(distance);
+}
+
+void MainWindow::showSpeedWidget() {
+    stackedWidget->setCurrentWidget(speed);
 }
 
 void MainWindow::showTemperatureWidget() {
