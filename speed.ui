@@ -16,6 +16,12 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="3" column="4" colspan="2">
     <widget class="QLineEdit" name="kmhline">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <pointsize>12</pointsize>
@@ -28,6 +34,12 @@
    </item>
    <item row="5" column="1" colspan="2">
     <widget class="QLineEdit" name="mphline">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <pointsize>12</pointsize>
@@ -70,6 +82,12 @@
    </item>
    <item row="5" column="3" colspan="2">
     <widget class="QLineEdit" name="knline">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <pointsize>12</pointsize>
@@ -82,6 +100,12 @@
    </item>
    <item row="5" column="5">
     <widget class="QLineEdit" name="ftpsline">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <pointsize>12</pointsize>
@@ -94,6 +118,12 @@
    </item>
    <item row="3" column="1" colspan="3">
     <widget class="QLineEdit" name="mpsline">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <pointsize>12</pointsize>

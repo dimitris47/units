@@ -41,8 +41,8 @@ void Speed::on_mphline_textEdited(const QString &arg1) {
     double kmh = mph * 1.609344;
     double kn = mph * 0.868976;
     double ftps = mph * 1.466667;
-    ui->kmhline->setText(QString::number(kmh, 'f', 2));
     ui->mpsline->setText(QString::number(mps, 'f', 2));
+    ui->kmhline->setText(QString::number(kmh, 'f', 2));
     ui->knline->setText(QString::number(kn, 'f', 2));
     ui->ftpsline->setText(QString::number(ftps, 'f', 2));
 }
