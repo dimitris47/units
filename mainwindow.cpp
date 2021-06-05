@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "distancewidget.h"
+#include "global.h"
 #include "speed.h"
 #include "temperaturewidget.h"
 #include "weightwidget.h"
@@ -95,14 +96,9 @@ void MainWindow::showWeightWidget() {
 }
 
 void MainWindow::on_actionAbout_triggered() {
-    QMessageBox::about(
-                    this,
-                    tr("Program Info"),
-                    (QApplication::applicationName() + " " + QApplication::applicationVersion() + "<br/><br/>" +
-                    tr("Program created by Dimitris Psathas<br/><br/>"
-                       "Written in C++, built against the Qt5 toolkit<br/><br/>"
-                       "Published under the MIT License<br/>"
-                       "&copy; 2020")));
+    QMessageBox::about(this,tr("Program Info"),
+                       (QApplication::applicationName() + " " + QApplication::applicationVersion() + "<br/><br/>" +
+                        APPINFO));
 }
 
 void MainWindow::closeEvent(QCloseEvent *event) {
