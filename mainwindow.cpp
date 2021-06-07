@@ -51,10 +51,10 @@ MainWindow::MainWindow(QWidget *parent) :
     weightActions->setEnabled(true);
 
     connect(ui->actionExit,        &QAction::triggered, this,        &MainWindow::close);
-    connect(ui->actionDistance,    &QAction::triggered, this,        &MainWindow::showDistanceWidget);
-    connect(ui->actionSpeed,       &QAction::triggered, this,        &MainWindow::showSpeedWidget);
-    connect(ui->actionTemperature, &QAction::triggered, this,        &MainWindow::showTemperatureWidget);
-    connect(ui->actionWeight,      &QAction::triggered, this,        &MainWindow::showWeightWidget);
+    connect(ui->actionDistance,    &QAction::triggered, this,        [this]() { stackedWidget->setCurrentWidget(distance); });
+    connect(ui->actionSpeed,       &QAction::triggered, this,        [this]() { stackedWidget->setCurrentWidget(speed); });
+    connect(ui->actionTemperature, &QAction::triggered, this,        [this]() { stackedWidget->setCurrentWidget(temperature); });
+    connect(ui->actionWeight,      &QAction::triggered, this,        [this]() { stackedWidget->setCurrentWidget(weight); });
     connect(ui->actionClear,       &QAction::triggered, distance,    &DistanceWidget::clear);
     connect(ui->actionClear,       &QAction::triggered, speed,       &Speed::clear);
     connect(ui->actionClear,       &QAction::triggered, temperature, &TemperatureWidget::clear);
@@ -77,22 +77,6 @@ void MainWindow::readSettings() {
         const QByteArray geometry = settings.value("geometry", QByteArray()).toByteArray();
         restoreGeometry(geometry);
     }
-}
-
-void MainWindow::showDistanceWidget() {
-    stackedWidget->setCurrentWidget(distance);
-}
-
-void MainWindow::showSpeedWidget() {
-    stackedWidget->setCurrentWidget(speed);
-}
-
-void MainWindow::showTemperatureWidget() {
-    stackedWidget->setCurrentWidget(temperature);
-}
-
-void MainWindow::showWeightWidget() {
-    stackedWidget->setCurrentWidget(weight);
 }
 
 void MainWindow::on_actionAbout_triggered() {

@@ -28,10 +28,6 @@ protected:
 
 private slots:
     void on_actionAbout_triggered();
-    void showDistanceWidget();
-    void showSpeedWidget();
-    void showTemperatureWidget();
-    void showWeightWidget();
 
 private:
     Ui::MainWindow *ui;

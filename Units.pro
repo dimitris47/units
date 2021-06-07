@@ -4,7 +4,7 @@ TARGET = units
 CONFIG += c++11
 DEFINES += QT_DEPRECATED_WARNINGS
 TEMPLATE = app
-VERSION = 2.0.1
+VERSION = 2.0.2
 
 SOURCES += \
     distancewidget.cpp \

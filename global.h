@@ -4,7 +4,7 @@
 #include <QString>
 
 const QString APPNAME("Units");
-const QString VERSION("2.0.1");
+const QString VERSION("2.0.2");
 const QString CONTRIBUTORS("Dimitris Psathas");
 
 const QString APPINFO("Program created by Dimitris Psathas<br/><br/>"
